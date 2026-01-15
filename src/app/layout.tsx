@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Basmallah Travel & Tour",
     images: [
       {
-        url: "https://basmallah-travel-tour.vercel.app/og-image.png",
+        url: "https://basmallah-travel-tour.vercel.app/images/og-image.png",
         width: 1200,
         height: 630,
       },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Basmallah Travel & Tour – Hajj & Umrah Pilgrimage",
     description: "Trusted and affordable Hajj and Umrah pilgrimage services. Book your spiritual journey with confidence.",
-    images: ["https://basmallah-travel-tour.vercel.app/og-image.png"],
+    images: ["https://basmallah-travel-tour.vercel.app/images/og-image.png"],
   },
   icons: {
     icon: "/images/favicon.ico",
