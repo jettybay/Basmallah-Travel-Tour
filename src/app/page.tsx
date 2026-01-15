@@ -68,7 +68,7 @@ export default function HomePage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9 }}
-            className="relative hidden lg:block"
+            className="relative"
           >
             <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#FAE6B1]">
               <Image
@@ -107,7 +107,7 @@ export default function HomePage() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((s, i) => (
             <motion.div
               key={i}
@@ -115,12 +115,18 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-3xl p-8 shadow-lg border"
+              className={`rounded-3xl p-8 shadow-lg border ${
+                services.length % 2 !== 0 && i === services.length - 1
+                  ? "col-span-2 lg:col-span-1 w-[calc(50%_-_1.25rem)] lg:w-full mx-auto"
+                  : ""
+              }`}
               style={{ backgroundColor: "#FAE6B1", borderColor: "#F8D568" }}
             >
-              <div className="text-3xl text-[#000080] mb-4">{s.icon}</div>
-              <h3 className="text-xl font-bold text-[#000080]">{s.title}</h3>
-              <p className="mt-3 text-[#000185]/80 text-sm">{s.desc}</p>
+              <div>
+                <div className="text-3xl text-[#000080] mb-4">{s.icon}</div>
+                <h3 className="text-xl font-bold text-[#000080]">{s.title}</h3>
+                <p className="mt-3 text-[#000185]/80 text-sm">{s.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -138,7 +144,7 @@ export default function HomePage() {
             Hajj & Umrah Packages
           </motion.h2>
 
-          <div className="mt-16 grid md:grid-cols-3 gap-10">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-10">
             {packages.map((p, i) => (
               <motion.div
                 key={i}
@@ -146,21 +152,27 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="rounded-3xl p-8 shadow-xl border"
+                className={`rounded-3xl p-8 shadow-xl border ${
+                  packages.length % 2 !== 0 && i === packages.length - 1
+                    ? "col-span-2 md:col-span-1 w-[calc(50%_-_1.25rem)] md:w-full mx-auto"
+                    : ""
+                }`}
                 style={{ backgroundColor: "#FAE6B1", color: "#000185" }}
               >
-                <h3 className="text-xl font-bold text-[#000080]">{p.name}</h3>
-                <p className="mt-3 text-sm opacity-80">{p.desc}</p>
-                <p className="mt-6 text-2xl font-extrabold text-[#000080]">
-                  {p.price}
-                </p>
-                <a
-                  href="#contact"
-                  className="inline-block mt-6 px-6 py-3 rounded-full font-semibold"
-                  style={{ backgroundColor: "#92EE91" }}
-                >
-                  Book Now
-                </a>
+                <div>
+                  <h3 className="text-xl font-bold text-[#000080]">{p.name}</h3>
+                  <p className="mt-3 text-sm opacity-80">{p.desc}</p>
+                  <p className="mt-6 text-2xl font-extrabold text-[#000080]">
+                    {p.price}
+                  </p>
+                  <a
+                    href="#contact"
+                    className="inline-block mt-6 px-6 py-3 rounded-full font-semibold"
+                    style={{ backgroundColor: "#92EE91" }}
+                  >
+                    Book Now
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -184,7 +196,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, i) => (
               <motion.div
                 key={i}
@@ -217,7 +229,7 @@ export default function HomePage() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
               <motion.div
                 key={i}
@@ -225,17 +237,23 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-3xl shadow-lg"
+                className={`p-8 rounded-3xl shadow-lg ${
+                  testimonials.length % 2 !== 0 && i === testimonials.length - 1
+                    ? "col-span-2 md:col-span-1 w-[calc(50%_-_1rem)] md:w-full mx-auto"
+                    : ""
+                }`}
                 style={{ backgroundColor: "#FAE6B1" }}
               >
-                <p className="text-[#000185]/80 italic">"{t.text}"</p>
-                <div className="mt-6 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#000080] flex items-center justify-center text-white font-bold">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#000080]">{t.name}</p>
-                    <p className="text-sm text-[#000185]/70">{t.location}</p>
+                <div>
+                  <p className="text-[#000185]/80 italic">"{t.text}"</p>
+                  <div className="mt-6 flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#000080] flex items-center justify-center text-white font-bold">
+                      {t.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#000080]">{t.name}</p>
+                      <p className="text-sm text-[#000185]/70">{t.location}</p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -375,4 +393,3 @@ const testimonials = [
     text: "A blessed experience. The guides were knowledgeable and the accommodations were excellent.",
   },
 ];
-
