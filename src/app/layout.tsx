@@ -13,8 +13,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Basmallah Travel & Tour - Hajj & Umrah Pilgrimage",
-  description: "Trusted and affordable Hajj and Umrah travel services. We provide complete pilgrimage packages including flights, hotels, and guided tours.",
+  title: "Basmallah Travel & Tour – Hajj & Umrah Pilgrimage",
+  description: "Trusted and affordable Hajj and Umrah pilgrimage services. Book your spiritual journey with confidence.",
+  openGraph: {
+    title: "Basmallah Travel & Tour – Hajj & Umrah Pilgrimage",
+    description: "Trusted and affordable Hajj and Umrah pilgrimage services. Book your spiritual journey with confidence.",
+    url: "https://basmallah-travel-tour.vercel.app",
+    siteName: "Basmallah Travel & Tour",
+    images: [
+      {
+        url: "https://basmallah-travel-tour.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Basmallah Travel & Tour – Hajj & Umrah Pilgrimage",
+    description: "Trusted and affordable Hajj and Umrah pilgrimage services. Book your spiritual journey with confidence.",
+    images: ["https://basmallah-travel-tour.vercel.app/og-image.png"],
+  },
   icons: {
     icon: "/images/favicon.ico",
     apple: "/favicon_io/apple-touch-icon.png",
