@@ -117,7 +117,7 @@ export default function HomePage() {
               transition={{ delay: i * 0.1 }}
               className={`rounded-3xl p-8 shadow-lg border ${
                 services.length % 2 !== 0 && i === services.length - 1
-                  ? "col-span-2 lg:col-span-1 w-[calc(50%_-_1.25rem)] lg:w-full mx-auto"
+                  ? "col-span-2 lg:col-span-1 w-[calc(50%_-_1.25rem)] lg:w-full mx-auto text-center lg:text-left"
                   : ""
               }`}
               style={{ backgroundColor: "#FAE6B1", borderColor: "#F8D568" }}
@@ -154,7 +154,7 @@ export default function HomePage() {
                 transition={{ delay: i * 0.1 }}
                 className={`rounded-3xl p-8 shadow-xl border ${
                   packages.length % 2 !== 0 && i === packages.length - 1
-                    ? "col-span-2 md:col-span-1 w-[calc(50%_-_1.25rem)] md:w-full mx-auto"
+                    ? "col-span-2 md:col-span-1 w-[calc(50%_-_1.25rem)] md:w-full mx-auto text-center md:text-left"
                     : ""
                 }`}
                 style={{ backgroundColor: "#FAE6B1", color: "#000185" }}
@@ -239,14 +239,21 @@ export default function HomePage() {
                 transition={{ delay: i * 0.1 }}
                 className={`p-8 rounded-3xl shadow-lg ${
                   testimonials.length % 2 !== 0 && i === testimonials.length - 1
-                    ? "col-span-2 md:col-span-1 w-[calc(50%_-_1rem)] md:w-full mx-auto"
+                    ? "col-span-2 md:col-span-1 w-[calc(50%_-_1rem)] md:w-full mx-auto text-center md:text-left"
                     : ""
                 }`}
                 style={{ backgroundColor: "#FAE6B1" }}
               >
                 <div>
                   <p className="text-[#000185]/80 italic">"{t.text}"</p>
-                  <div className="mt-6 flex items-center gap-4">
+                  <div
+                    className={`mt-6 flex items-center gap-4 ${
+                      testimonials.length % 2 !== 0 &&
+                      i === testimonials.length - 1
+                        ? "justify-center md:justify-start"
+                        : ""
+                    }`}
+                  >
                     <div className="w-12 h-12 rounded-full bg-[#000080] flex items-center justify-center text-white font-bold">
                       {t.name.charAt(0)}
                     </div>
