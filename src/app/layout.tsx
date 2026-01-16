@@ -14,17 +14,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Basmallah Travel & Tour – Hajj & Umrah Pilgrimage",
-  description: "Trusted and affordable Hajj and Umrah pilgrimage services. Book your spiritual journey with confidence.",
+  description: "Trusted and affordable Hajj and Umrah pilgrimage services.",
   openGraph: {
     title: "Basmallah Travel & Tour – Hajj & Umrah Pilgrimage",
-    description: "Trusted and affordable Hajj and Umrah pilgrimage services. Book your spiritual journey with confidence.",
+    description: "Trusted and affordable Hajj and Umrah pilgrimage services.",
     url: "https://basmallah-travel-tour.vercel.app",
     siteName: "Basmallah Travel & Tour",
     images: [
       {
-        url: "https://basmallah-travel-tour.vercel.app/images/og-image.png",
+        url: "https://basmallah-travel-tour.vercel.app/og-image.png",
         width: 1200,
         height: 630,
+        alt: "Basmallah Travel & Tour",
       },
     ],
     type: "website",
@@ -32,8 +33,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Basmallah Travel & Tour – Hajj & Umrah Pilgrimage",
-    description: "Trusted and affordable Hajj and Umrah pilgrimage services. Book your spiritual journey with confidence.",
-    images: ["https://basmallah-travel-tour.vercel.app/images/og-image.png"],
+    description: "Trusted and affordable Hajj and Umrah pilgrimage services.",
+    images: ["https://basmallah-travel-tour.vercel.app/og-image.png"],
   },
   icons: {
     icon: "/images/favicon.ico",
@@ -57,3 +58,4 @@ export default function RootLayout({
     </html>
   );
 }
+
